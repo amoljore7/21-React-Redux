@@ -1,6 +1,6 @@
 const INITIAL_STATE={
     name:"Amol",
-    filght_Get_Data:['eat','code'],
+    filght_Get_Data:['A','B','C','D']
 }
 const reducer =(state=INITIAL_STATE,action)=>{
     switch(action.type)
@@ -10,8 +10,8 @@ const reducer =(state=INITIAL_STATE,action)=>{
         return obj1;
 
         
-        case 'GetData':
-        const obj2 = Object.assign({},state, {filght_Get_Datar:action.payload});
+        case 'Get_Data':
+        const obj2 = Object.assign({},state,{filght_Get_Data:action.payload});
         return obj2;
 
         default:

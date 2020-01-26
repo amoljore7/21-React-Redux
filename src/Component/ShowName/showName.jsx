@@ -11,7 +11,8 @@ class ShowName extends Component {
     render() {
         return (
             <div>
-                <h1>My Name is : {this.props.name}</h1>
+                <h1>It is Show Name Component</h1>
+                <h2>My Name is : {this.props.name}</h2>
                 <button onClick={() => this.props.changeName("Shubham")}>Change Name</button>
             </div>
         )

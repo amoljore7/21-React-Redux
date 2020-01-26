@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import flightAction from './flightAction'
 
-
-
 class Filght extends Component {
 
     constructor(props) {
@@ -15,11 +13,15 @@ class Filght extends Component {
         };
         
     }
+    updateData=()=>{
+        this.props.change_filght_Get_Data(["amol","Shubham","Rahul"])
+    }
       render() {
-        const { flightData } = this.props.flightData;
         return (
             <div>
-                <h1>Hero Flight</h1>
+                <h1>It is Flight Component</h1>
+                {this.props.flightData ? <h4>{this.props.flightData}</h4> :<h6>Data Not comming</h6>}
+                <button onClick={this.updateData}>Change Array Data</button>
             </div>
 
         );
@@ -29,14 +31,14 @@ class Filght extends Component {
 
 function mapStateToProps(state) {
     return {
-        flightData: state.filght_Get_Data
+        flightData:state.filght_Get_Data
     };
 }
 
 function mapDispatchToProps(dispatch) {
 
     return bindActionCreators({
-        heroBannerDataInReduxStore: flightAction
+        change_filght_Get_Data: flightAction
     }, dispatch);
 }
 

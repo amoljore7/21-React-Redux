@@ -1,8 +1,8 @@
 
-const flightAction =(flight_Get_Data)=>{
+const flightAction =(Get_Data)=>{
     return{
-        type: 'GetData',
-        pyload: flight_Get_Data      
+        type: 'Get_Data',
+        payload: Get_Data      
     }
 }
 export default flightAction;
