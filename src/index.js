@@ -1,17 +1,17 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './index.css';
 
-import {createStore} from 'redux'
-import {Provider} from 'react-redux'
-import reducer from './components/reducer'
-const store = createStore();
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import Reducer from './Component/reducer';
 
-ReactDOM.render(
-  <Provider store={store}>
-      <App />
-  </Provider>,
-  document.getElementById('root')
-);
+const store = createStore(Reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+const Xroot = ()=>{
+    return (<Provider store={store}> <App /> </Provider>);
+}
+
+ReactDOM.render(<Xroot/>, document.getElementById('root'));
+
+

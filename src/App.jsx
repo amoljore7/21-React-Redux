@@ -1,11 +1,27 @@
-import React from 'react';
-import {connect} from 'react-redux'
-class App extends React.Component {
+import React, { Component } from 'react';
+import ShowName from './Component/ShowName/showName.jsx';
+import Flight from './Component/Filght/flight';
+
+import { connect } from 'react-redux';
+
+
+class App extends Component {
+
   render() {
     return (
-      <div>Am App Component</div>
+      <div>
+        <ShowName />
+      </div>
     );
+  }
+
+}
+
+const mapStatetoProps = (state) => {
+  return {
+    storeState: state,
   }
 }
 
-export default connect()(App);
+
+export default connect(mapStatetoProps, dispatch => ({ dispatch }))(App);
